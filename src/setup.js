@@ -34,11 +34,22 @@ const Logger = require('@mojaloop/central-services-shared').Logger
 const Rx = require('rxjs')
 const { filter, switchMap } = require('rxjs/operators')
 const Observables = require('./observeables')
+const createHealtcheck = require('healthcheck-server')
+const Config = require('./lib/config')
 
 const setup = async () => {
   await Consumer.registerNotificationHandler()
   const topicName = Utility.transformGeneralTopicName(Utility.ENUMS.NOTIFICATION, Utility.ENUMS.EVENT)
   const consumer = Consumer.getConsumer(topicName)
+
+  createHealtcheck({
+    port: Config.get('healthCheckPort'),
+    path: '/healthcheck',
+    status: ({cpu, memory}) => {
+      if (consumer._status.running) return true
+      else return false
+    }
+  })
 
   const topicObservable = Rx.Observable.create((observer) => {
     consumer.on('message', async (data) => {

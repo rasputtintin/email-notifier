@@ -87,5 +87,6 @@
         "pass": "m0dusb0xn0t1f13r"
       }
     }
-  }
+  },
+  "healthCheckPort": 3081
 }

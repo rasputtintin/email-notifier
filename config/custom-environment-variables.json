@@ -12,6 +12,6 @@
         "pass": "MAIL_NOTIF_SMTP_PASS"
       }
     }
-  }
-
+  },
+  "healthCheckPort": "MAIL_NOTIF_HEALTH_PORT"
 }
