@@ -30,7 +30,7 @@
 
 const Nodemailer = require('nodemailer')
 const Config = require('../lib/config')
-const MailOptions = Config.get('emailSettings')
+const MailOptions = Config.get('emailSettings').smtpConfig
 
 const transporter = Nodemailer.createTransport(MailOptions)
 
