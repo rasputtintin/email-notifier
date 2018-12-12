@@ -106,12 +106,16 @@ const dictionary = {
 }
 
 const actionBuilder = (action) => {
+  // console.log('action builder returns : ' + JSON.stringify(dictionary[action]))
   return dictionary[action]
 }
 
 const actionObservable = (message) => {
   return Rx.Observable.create(async observer => {
+    // console.log('message recieved is : ' + JSON.stringify(message))
     const result = await actionBuilder(message.value.content.payload.messageDetails.action)({ payload: message.value.content.payload })
+    // const result = 'tes'
+    console.log('action obesrvable returns ' + JSON.stringify(result))
     observer.next(result)
     try {
     } catch (err) {
