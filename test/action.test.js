@@ -27,6 +27,7 @@
 const Rx = require('rxjs');
 const Mailer = require('../src/nodeMailer/sendMail');
 const Sinon = require('sinon');
+const should = require('chai').should();
 const ActionObservable = require('../src/observables/actions').actionObservable;
 
 describe('RxJs Observable Test Examples', () => {
