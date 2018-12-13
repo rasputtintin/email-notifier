@@ -25,10 +25,10 @@
 'use strict'
 
 const Rx = require('rxjs');
-const Mailer = require('../src/nodeMailer/sendMail');
+const Mailer = require('../../../src/nodeMailer/sendMail');
 const Sinon = require('sinon');
 const should = require('chai').should();
-const ActionObservable = require('../src/observables/actions').actionObservable;
+const ActionObservable = require('../../../src/observables/actions').actionObservable;
 
 describe('RxJs Observable Test Examples', () => {
   Sinon.config = {
@@ -63,7 +63,7 @@ describe('RxJs Observable Test Examples', () => {
               "_id": "5bf5480aa305f9801a6d59db",
               "name": "dfsp1",
               "type": "NET_DEBIT_CAP_ADJUSTMENT",
-              "value": "deon.botha@modusbox.com",
+              "value": "dean.bothma@modusbox.com",
               "action": "sendEmail",
               "createdAt": "2018-11-21T11:56:58.919Z",
               "updatedAt": "2018-11-21T14:00:38.993Z",
@@ -73,7 +73,7 @@ describe('RxJs Observable Test Examples', () => {
               "_id": "5bf5480aa305f9801a6d59dd",
               "name": "Hub",
               "type": "NET_DEBIT_CAP_ADJUSTMENT",
-              "value": "deon.botha@modusbox.com",
+              "value": "dean.bothma@modusbox.com",
               "action": "sendEmail",
               "createdAt": "2018-11-21T11:56:58.950Z",
               "updatedAt": "2018-11-21T14:00:39.077Z",
