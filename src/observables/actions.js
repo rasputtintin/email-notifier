@@ -71,18 +71,18 @@ const dictionary = {
 }
 
 const actionBuilder = (action) => {
-  // console.log('action builder returns : ' + JSON.stringify(dictionary[action]))
-  return dictionary[action]
+  if (action in dictionary) {
+    return dictionary[action]
+  } else {
+    throw new Error('Action are not supported')
+  }
 }
 
 const actionObservable = (message) => {
   return Rx.Observable.create(async observer => {
-    // console.log('message recieved is : ' + JSON.stringify(message))
-    const result = await actionBuilder(message.value.content.payload.messageDetails.action)({ payload: message.value.content.payload })
-    // const result = 'tes'
-    console.log('action obesrvable returns ' + JSON.stringify(result))
-    observer.next(result)
     try {
+      const result = await actionBuilder(message.value.content.payload.messageDetails.action)({ payload: message.value.content.payload })
+      observer.next(result)
     } catch (err) {
       Logger.info(`action observer failed with error - ${err}`)
       observer.error(err)
