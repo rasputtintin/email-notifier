@@ -31,7 +31,7 @@ const should = require('chai').should();
 const Expect = require('chai').expect;
 const ActionObservable = require('../../../src/observables/actions').actionObservable;
 
-describe('RxJs Observable Tests : ', () => {
+describe('Templates Tests (Index.js) : ', () => {
   Sinon.config = {
     useFakeTimers: false
   };
@@ -41,7 +41,7 @@ describe('RxJs Observable Tests : ', () => {
     // create a sandbox
     sandbox = Sinon.sandbox.create();
     // start stubbing stuff
-    sandbox.stub(Mailer, 'sendMailMessage');
+    sandbox.stub(Mailer, 'sendMailMessage');  ????
   });
 
   afterEach(function() {
@@ -49,7 +49,7 @@ describe('RxJs Observable Tests : ', () => {
     sandbox.restore();
   });
 
-  it('Should test the actionObservable succeeds', done => {
+  it('loadTemplates should fail when the wrong path is given', done => {
     let mockMessage = {
       "value": {
         "from": "SYSTEM",
@@ -136,7 +136,7 @@ describe('RxJs Observable Tests : ', () => {
       })
   });
 
-  it('Should fail when sent mail message fails.', done => {
+  it('getTemplateNamesByType should fail when incorrect path is given.', done => {
     let mockMessage = {
       "value": {
         "from": "SYSTEM",
@@ -220,7 +220,7 @@ describe('RxJs Observable Tests : ', () => {
       })
   });
 
-  it('Should test the actionObservable fails with incorrect action', done => {
+  /*it('Should test the actionObservable fails with incorrect action', done => {
     let mockMessage = {
       "value": {
         "from": "SYSTEM",
@@ -304,5 +304,5 @@ describe('RxJs Observable Tests : ', () => {
         Expect(new Error).to.be.an('error');
         done()
       })
-  });
+  });*/
 })
