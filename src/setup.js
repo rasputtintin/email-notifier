@@ -44,8 +44,8 @@ const setup = async () => {
 
   createHealtcheck({
     port: Config.get('PORT'),
-    path: '/healthcheck',
-    status: ({cpu, memory}) => {
+    path: '/health',
+    status: ({ cpu, memory }) => {
       if (consumer._status.running) return true
       else return false
     }
