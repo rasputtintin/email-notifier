@@ -297,7 +297,6 @@ describe('RxJs Observable Tests : ', () => {
 
     ActionObservable(mockMessage).subscribe(
       result => {
-
         done()
       },
       error => {
