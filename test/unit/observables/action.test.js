@@ -31,7 +31,7 @@ const should = require('chai').should();
 const Expect = require('chai').expect;
 const ActionObservable = require('../../../src/observables/actions').actionObservable;
 
-describe('RxJs Observable Tests : ', () => {
+describe('RxJs Observable Tests (Action Observable) : ', () => {
   Sinon.config = {
     useFakeTimers: false
   };
