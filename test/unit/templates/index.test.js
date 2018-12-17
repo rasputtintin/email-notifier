@@ -33,24 +33,24 @@ const Templates = require('../../../templates/index');
 describe('Templates unit tests (Index.js) : ', () => {
 
   var sandbox;
-  beforeEach(function() {
+  beforeEach(function () {
     // create a sandbox
     sandbox = Sinon.sandbox.create();
     // start stubbing stuff
   });
 
-  afterEach(function() {
+  afterEach(function () {
     // restore the environment as it was before
     sandbox.restore();
   });
 
-  it('getTemplateNamesByType should fail when the wrong path is given', done => {
+  it('Should test the actionObservable succeeds', async () => {
 
-    var path = '/Users/istorecenturion/mojaloop'
-    var type = 'Test'
-
-    Expect(new Error).to.be.an('error');
-    done()
-
-  });
+    try {
+      let result = await Templates.loadTemplates('/test', 'mustache')
+    } catch (e) {
+      Expect(e).to.be.an('error');
+      return Promise.resolve()
+    }
+  })
 })
