@@ -119,9 +119,9 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
       "partition": 0,
       "timestamp": 1544535418448
     }
+
     const transport = {
       sendMail: (data, callback) => {
-        // const err = new Error('some error');
         callback(null, {response: 'ok'});
       }
     }
@@ -130,7 +130,6 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
     const Mailer = require('../../../src/nodeMailer/sendMail')
 
     try {
-
       let result = await Mailer.sendMailMessage(mockMessage)
 
       result.should.deep.equal({
@@ -143,8 +142,6 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
       return Promise.resolve()
     }
   })
-
-// ===============
 
   describe('nodeMailer unit tests (sendMail.js Exception) : ', () => {
 
@@ -233,6 +230,7 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
         "partition": 0,
         "timestamp": 1544535418448
       }
+
       const transport = {
         sendMail: (data, callback) => {
           const err = new Error('some error');
