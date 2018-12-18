@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ceaded8b-34c9-48d9-b712-11da7f951a06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nodeMailer/sendMail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/nodeMailer/sendMail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/unit/observables/action.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/observables/action.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/templates/index.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/templates/index.test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/email_notifier$Templates_unit_tests__Index_js____.dat" NAME="Templates unit tests (Index.js) :  Coverage Results" MODIFIED="1545053793800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/email_notifier$Templates_unit_tests__Index_js____.dat" NAME="Templates unit tests (Index.js) :  Coverage Results" MODIFIED="1545054650569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable_Test_Examples_Should_test_the_actionObservable_fails.dat" NAME="RxJs Observable Test Examples.Should test the actionObservable fails Coverage Results" MODIFIED="1544780920684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable___.dat" NAME="RxJs Observable :  Coverage Results" MODIFIED="1544778124468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable_Test_Examples_Should_test_the_actionObservable_succeeds.dat" NAME="RxJs Observable Test Examples.Should test the actionObservable succeeds Coverage Results" MODIFIED="1544687826271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -21,68 +23,135 @@
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable_Test_Examples_Should_test_the_actionObservable_fails_2.dat" NAME="RxJs Observable Test Examples.Should test the actionObservable fails 2 Coverage Results" MODIFIED="1544780912462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable_Test_Examples_Should_test_the_actionObservable_throws_an_exception.dat" NAME="RxJs Observable Test Examples.Should test the actionObservable throws an exception Coverage Results" MODIFIED="1544778517245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable____should_test_the_actionObservable_succeeds_in_sending_an_email_message_.dat" NAME="RxJs Observable : .should test the actionObservable succeeds in sending an email message. Coverage Results" MODIFIED="1544778088791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/email_notifier$nodeMailer_unit_tests__sendMail_js______sendMail_should_return_success_.dat" NAME="nodeMailer unit tests (sendMail.js) : . sendMail should return success. Coverage Results" MODIFIED="1545131620389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$test_unit_templates_index_test_js.dat" NAME="test/unit/templates/index.test.js Coverage Results" MODIFIED="1545051155313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$Templates_unit_tests__Index_js_____getTemplateNamesByType_should_fail_when_the_wrong_path_is_given.dat" NAME="Templates unit tests (Index.js) : .getTemplateNamesByType should fail when the wrong path is given Coverage Results" MODIFIED="1545039656283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/email_notifier$test_unit_nodeMailer_sendMail_test_js.dat" NAME="test/unit/nodeMailer/sendMail.test.js Coverage Results" MODIFIED="1545131630790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable____should_test_the_actionObservable_throw_and_exception_in_sending_an_email_message_.dat" NAME="RxJs Observable : .should test the actionObservable throw and exception in sending an email message. Coverage Results" MODIFIED="1544778174467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable_Test_Examples.dat" NAME="RxJs Observable Test Examples Coverage Results" MODIFIED="1544781215990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/email_notifier$nodeMailer_unit_tests__sendMail_js____.dat" NAME="nodeMailer unit tests (sendMail.js) :  Coverage Results" MODIFIED="1545131513296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/email_notifier$RxJs_Observable_Test_Examples_Should_test_the_actionObservable_succeeds__1_.dat" NAME="RxJs Observable Test Examples.Should test the actionObservable succeeds (1) Coverage Results" MODIFIED="1544780927248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="74" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/observables/actions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/setup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit/observables/action.test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="43" column="44" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="44" />
-              <folding>
-                <element signature="e#2161#4735#0" />
-                <element signature="e#5104#7678#0" />
-                <element signature="e#8019#10593#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/unit/templates/index.test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="44" column="4" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.43911916">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/observables/actions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="594">
+                  <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="63" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/setup.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="825">
+                  <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/unit/observables/action.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1175">
+                  <caret line="217" column="44" lean-forward="true" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/nodeMailer/sendMail.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="54" selection-start-line="54" selection-end-line="55" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/lib/enum.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-899">
+                  <caret line="144" column="4" selection-start-line="144" selection-start-column="4" selection-end-line="144" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#2091#4665#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/unit/templates/index.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-65">
+                  <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" selection-end-column="58" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/lib/utility.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4755">
+                  <caret line="317" selection-start-line="317" selection-end-line="318" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="255" column="6" lean-forward="true" selection-start-line="255" selection-start-column="6" selection-end-line="255" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#2060#4634#0" />
+                    <element signature="e#11893#14467#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="86">
+                  <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,6 +170,10 @@
       <find>getActions</find>
       <find>createMessageProtocol</find>
       <find>loadTemplates</find>
+      <find>NET_DEBIT_CAP</find>
+      <find>NET_DEBIT_CAP_BREACH_MAIL</find>
+      <find>mailer</find>
+      <find>sendmail-transport</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,8 +197,11 @@
         <option value="$PROJECT_DIR$/src/observables/actions.js" />
         <option value="$PROJECT_DIR$/templates/index.js" />
         <option value="$PROJECT_DIR$/src/setup.js" />
-        <option value="$PROJECT_DIR$/test/unit/observables/action.test.js" />
         <option value="$PROJECT_DIR$/test/unit/templates/index.test.js" />
+        <option value="$PROJECT_DIR$/test/unit/observables/action.test.js" />
+        <option value="$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test2.js" />
+        <option value="$PROJECT_DIR$/src/nodeMailer/sendMail.js" />
+        <option value="$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js" />
       </list>
     </option>
   </component>
@@ -153,10 +229,9 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="54" />
-    <option name="y" value="39" />
-    <option name="width" value="1913" />
-    <option name="height" value="1095" />
+    <option name="y" value="22" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -165,6 +240,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,12 +252,6 @@
               <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
               <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
@@ -216,6 +286,13 @@
               <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="unit" type="462c0819:PsiDirectoryNode" />
+              <item name="nodeMailer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
               <item name="observables" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -225,18 +302,26 @@
               <item name="unit" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545053752809" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545131633571" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.9.4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
@@ -266,7 +351,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.Templates unit tests (Index.js) : ">
+  <component name="RunManager" selected="Mocha.test/unit/nodeMailer/sendMail.test.js">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -305,7 +390,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Templates unit tests (Index.js) : . getTemplateNamesByType should throw an error when incorrect path is given." type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="nodeMailer unit tests (sendMail.js) : . sendMail should return success." type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -314,14 +399,14 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/unit/templates/index.test.js</test-file>
+      <test-file>$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js</test-file>
       <test-names>
-        <name value="Templates unit tests (Index.js) : " />
-        <name value=" getTemplateNamesByType should throw an error when incorrect path is given." />
+        <name value="nodeMailer unit tests (sendMail.js) : " />
+        <name value=" sendMail should return success." />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Templates unit tests (Index.js) : . loadTemplates should throw an error when incorrect path is given." type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="nodeMailer unit tests (sendMail.js) : . sendMail should throw an error." type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -330,14 +415,14 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/unit/templates/index.test.js</test-file>
+      <test-file>$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js</test-file>
       <test-names>
-        <name value="Templates unit tests (Index.js) : " />
-        <name value=" loadTemplates should throw an error when incorrect path is given." />
+        <name value="nodeMailer unit tests (sendMail.js) : " />
+        <name value=" sendMail should throw an error." />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Templates unit tests (Index.js) : .should do stuff" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="nodeMailer unit tests (sendMail.js) : .nodeMailer unit tests (sendMail.js Exception) : . sendMail should throw an error." type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -346,14 +431,15 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/unit/templates/index.test.js</test-file>
+      <test-file>$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js</test-file>
       <test-names>
-        <name value="Templates unit tests (Index.js) : " />
-        <name value="should do stuff" />
+        <name value="nodeMailer unit tests (sendMail.js) : " />
+        <name value="nodeMailer unit tests (sendMail.js Exception) : " />
+        <name value=" sendMail should throw an error." />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Templates unit tests (Index.js) : " type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="nodeMailer unit tests (sendMail.js) : " type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -362,13 +448,13 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/unit/templates/index.test.js</test-file>
+      <test-file>$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js</test-file>
       <test-names>
-        <name value="Templates unit tests (Index.js) : " />
+        <name value="nodeMailer unit tests (sendMail.js) : " />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="test/unit/templates/index.test.js" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="test/unit/nodeMailer/sendMail.test.js" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -377,24 +463,24 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST_FILE</test-kind>
-      <test-file>$PROJECT_DIR$/test/unit/templates/index.test.js</test-file>
+      <test-file>$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js</test-file>
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : " />
       <item itemvalue="Node.js.debug email notifier " />
-      <item itemvalue="Mocha.Templates unit tests (Index.js) : . loadTemplates should throw an error when incorrect path is given." />
-      <item itemvalue="Mocha.Templates unit tests (Index.js) : . getTemplateNamesByType should throw an error when incorrect path is given." />
-      <item itemvalue="Mocha.Templates unit tests (Index.js) : .should do stuff" />
-      <item itemvalue="Mocha.Templates unit tests (Index.js) : " />
-      <item itemvalue="Mocha.test/unit/templates/index.test.js" />
+      <item itemvalue="Mocha.test/unit/nodeMailer/sendMail.test.js" />
+      <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : . sendMail should return success." />
+      <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : . sendMail should throw an error." />
+      <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : .nodeMailer unit tests (sendMail.js Exception) : . sendMail should throw an error." />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.Templates unit tests (Index.js) : " />
-        <item itemvalue="Mocha.Templates unit tests (Index.js) : . loadTemplates should throw an error when incorrect path is given." />
-        <item itemvalue="Mocha.test/unit/templates/index.test.js" />
-        <item itemvalue="Mocha.Templates unit tests (Index.js) : . getTemplateNamesByType should throw an error when incorrect path is given." />
-        <item itemvalue="Mocha.Templates unit tests (Index.js) : .should do stuff" />
+        <item itemvalue="Mocha.test/unit/nodeMailer/sendMail.test.js" />
+        <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : . sendMail should return success." />
+        <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : .nodeMailer unit tests (sendMail.js Exception) : . sendMail should throw an error." />
+        <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : " />
+        <item itemvalue="Mocha.nodeMailer unit tests (sendMail.js) : . sendMail should throw an error." />
       </list>
     </recent_temporary>
   </component>
@@ -414,44 +500,45 @@
       <workItem from="1544533876664" duration="14597000" />
       <workItem from="1544687638310" duration="9560000" />
       <workItem from="1544772145535" duration="9651000" />
-      <workItem from="1545033541001" duration="15540000" />
+      <workItem from="1545033541001" duration="20625000" />
+      <workItem from="1545119873232" duration="9465000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_unit_templates_index_test_js - 2018.12.17 at 15h 13m 18s.xml">
-      <configuration name="test/unit/templates/index.test.js" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)_____sendMail_should_throw_an_error_ - 2018.12.18 at 12h 57m 40s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : . sendMail should throw an error." configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_unit_templates_index_test_js - 2018.12.17 at 15h 13m 44s.xml">
-      <configuration name="test/unit/templates/index.test.js" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="test_unit_nodeMailer_sendMail_test_js - 2018.12.18 at 13h 01m 08s.xml">
+      <configuration name="test/unit/nodeMailer/sendMail.test.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_unit_templates_index_test_js - 2018.12.17 at 15h 14m 13s.xml">
-      <configuration name="test/unit/templates/index.test.js" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="test_unit_nodeMailer_sendMail_test_js - 2018.12.18 at 13h 01m 14s.xml">
+      <configuration name="test/unit/nodeMailer/sendMail.test.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Templates_unit_tests_(Index_js)___ - 2018.12.17 at 15h 15m 13s.xml">
-      <configuration name="Templates unit tests (Index.js) : " configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)___ - 2018.12.18 at 13h 02m 16s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : " configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_unit_templates_index_test_js - 2018.12.17 at 15h 17m 18s.xml">
-      <configuration name="test/unit/templates/index.test.js" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)___ - 2018.12.18 at 13h 02m 27s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : " configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_unit_templates_index_test_js - 2018.12.17 at 15h 18m 07s.xml">
-      <configuration name="test/unit/templates/index.test.js" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)___ - 2018.12.18 at 13h 04m 44s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : " configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_unit_templates_index_test_js - 2018.12.17 at 15h 33m 04s.xml">
-      <configuration name="test/unit/templates/index.test.js" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)___ - 2018.12.18 at 13h 06m 30s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : " configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Templates_unit_tests_(Index_js)___ - 2018.12.17 at 15h 33m 18s.xml">
-      <configuration name="Templates unit tests (Index.js) : " configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)___ - 2018.12.18 at 13h 09m 20s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : " configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Templates_unit_tests_(Index_js)_____loadTemplates_should_throw_an_error_when_incorrect_path_is_given_ - 2018.12.17 at 15h 35m 30s.xml">
-      <configuration name="Templates unit tests (Index.js) : . loadTemplates should throw an error when incorrect path is given." configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)___ - 2018.12.18 at 13h 10m 00s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : " configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Templates_unit_tests_(Index_js)___ - 2018.12.17 at 15h 35m 50s.xml">
-      <configuration name="Templates unit tests (Index.js) : " configurationId="mocha-javascript-test-runner" />
+    <history-entry file="nodeMailer_unit_tests_(sendMail_js)___ - 2018.12.18 at 13h 11m 53s.xml">
+      <configuration name="nodeMailer unit tests (sendMail.js) : " configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67438000" />
+    <option name="totallyTimeSpent" value="81988000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,7 +553,7 @@
     <frame x="0" y="0" width="2048" height="1152" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14855434" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14057827" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -476,12 +563,12 @@
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.34071222" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3570741" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.48893166" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.33493745" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32977587" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.1838306" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.38883543" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Quokka" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -510,8 +597,25 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test/unit/observables/action.test.js</url>
           <line>52</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/nodeMailer/sendMail.js</url>
+          <line>51</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/nodeMailer/sendMail.js</url>
+          <line>52</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js</url>
+          <line>135</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -519,17 +623,22 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>transporter</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>dictionary[action]</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
         <expression-string>action</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -576,13 +685,6 @@
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/kafka/producer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -603,34 +705,6 @@
     <entry file="file://$PROJECT_DIR$/templates/en/breach/hubEmail.mustache">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/setup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/utility.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="313" column="6" selection-start-line="313" selection-start-column="6" selection-end-line="313" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nodeMailer/sendMail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observables/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.9.4/core-modules/module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -638,29 +712,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/observables/action.test.js">
+    <entry file="file://$PROJECT_DIR$/src/setup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="43" column="44" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="44" />
-          <folding>
-            <element signature="e#2161#4735#0" />
-            <element signature="e#5104#7678#0" />
-            <element signature="e#8019#10593#0" />
-          </folding>
+        <state relative-caret-position="825">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/utility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4755">
+          <caret line="317" selection-start-line="317" selection-end-line="318" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="165">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/observables/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/enum.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/templates/index.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="44" column="4" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+        <state relative-caret-position="-65">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/observables/action.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="217" column="44" lean-forward="true" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodeMailer/sendMail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="54" selection-start-line="54" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="255" column="6" lean-forward="true" selection-start-line="255" selection-start-column="6" selection-end-line="255" selection-end-column="6" />
+          <folding>
+            <element signature="e#2060#4634#0" />
+            <element signature="e#11893#14467#0" />
+          </folding>
         </state>
       </provider>
     </entry>

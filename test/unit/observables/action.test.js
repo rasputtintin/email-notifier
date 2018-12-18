@@ -132,7 +132,7 @@ describe('RxJs Observable Tests (Action Observable) : ', () => {
         done()
       },
       error => {
-        done
+        done()
       })
   });
 

@@ -34,7 +34,7 @@ const MailOptions = Config.get('emailSettings').smtpConfig
 
 const transporter = Nodemailer.createTransport(MailOptions)
 
-let verifyEmailTransport = () => {
+/*let verifyEmailTransport = () => {
   return new Promise((resolve, reject) => {
     transporter.verify(function (error, success) {
       if (error) {
@@ -44,7 +44,7 @@ let verifyEmailTransport = () => {
       }
     })
   })
-}
+}*/
 
 let sendMailMessage = async (message) => {
   return new Promise((resolve, reject) => {
@@ -52,10 +52,10 @@ let sendMailMessage = async (message) => {
       if (error) {
         reject(error)
       } else {
-        resolve({ emailSent: info.response })
+        resolve({emailSent: info.response})
       }
     })
   })
 }
 
-module.exports = { sendMailMessage, verifyEmailTransport }
+module.exports = {sendMailMessage}
