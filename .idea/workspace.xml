@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ceaded8b-34c9-48d9-b712-11da7f951a06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,14 +34,14 @@
     <option name="myElementSize" value="74" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.43911916">
+    <splitter split-orientation="horizontal" split-proportion="0.22862694">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/observables/actions.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="594">
-                  <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="63" />
+                  <caret line="86" column="63" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="63" />
                 </state>
               </provider>
             </entry>
@@ -50,7 +50,7 @@
             <entry file="file://$PROJECT_DIR$/test/unit/observables/action.test.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1175">
-                  <caret line="217" column="44" lean-forward="true" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="44" />
+                  <caret line="217" column="44" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -58,17 +58,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/nodeMailer/sendMail.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="356">
-                  <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/node_modules/nodemailer/lib/nodemailer.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+                <state relative-caret-position="513">
+                  <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -98,7 +89,7 @@
             <entry file="file://$PROJECT_DIR$/test/unit/templates/index.test.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-65">
-                  <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" selection-end-column="58" />
+                  <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="58" />
                 </state>
               </provider>
             </entry>
@@ -125,7 +116,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="516">
@@ -138,11 +129,29 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="86">
-                  <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="44" />
+                <state relative-caret-position="68">
+                  <caret line="25" column="101" selection-start-line="25" selection-start-column="101" selection-end-line="25" selection-end-column="101" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/istanbul-coveralls/cli.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="27" column="25" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="96">
+                  <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
@@ -170,8 +179,10 @@
       <find>loadTemplates</find>
       <find>NET_DEBIT_CAP</find>
       <find>NET_DEBIT_CAP_BREACH_MAIL</find>
-      <find>mailer</find>
       <find>sendmail-transport</find>
+      <find>mailer</find>
+      <find>travis</find>
+      <find>COVERALLS_REPO_TOKEN</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,7 +201,6 @@
         <option value="$PROJECT_DIR$/test/unit/observables/spec.js" />
         <option value="$PROJECT_DIR$/test/spec.js" />
         <option value="$PROJECT_DIR$/test/action.test.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/observables/index.js" />
         <option value="$PROJECT_DIR$/src/observables/actions.js" />
         <option value="$PROJECT_DIR$/templates/index.js" />
@@ -201,6 +211,7 @@
         <option value="$PROJECT_DIR$/test/unit/nodeMailer/sendMailFail.test.js" />
         <option value="$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js" />
         <option value="$PROJECT_DIR$/src/nodeMailer/sendMail.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -250,65 +261,13 @@
             <path>
               <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
               <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
               <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="nodeMailer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="observables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-              <item name="nodeMailer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-              <item name="observables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-notifier" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="email-notifier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="istanbul-coveralls" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -320,7 +279,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545136171846" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545141559525" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.9.4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
@@ -331,6 +290,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="standardjs.codestyle.accepted" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -500,7 +460,7 @@
       <workItem from="1544687638310" duration="9560000" />
       <workItem from="1544772145535" duration="9651000" />
       <workItem from="1545033541001" duration="20625000" />
-      <workItem from="1545119873232" duration="13185000" />
+      <workItem from="1545119873232" duration="17154000" />
     </task>
     <servers />
   </component>
@@ -537,7 +497,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85708000" />
+    <option name="totallyTimeSpent" value="89677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -567,7 +527,7 @@
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32977587" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.38306063" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.37151107" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Quokka" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -740,9 +700,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.nyc_output/0f1e07c6-17da-422f-bfcb-fdb7733575cd.json" />
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/kafka/producer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -794,7 +751,7 @@
     <entry file="file://$PROJECT_DIR$/src/observables/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="63" />
+          <caret line="86" column="63" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -805,17 +762,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/templates/index.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-65">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" selection-end-column="58" />
+          <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -829,7 +779,7 @@
     <entry file="file://$PROJECT_DIR$/test/unit/observables/action.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1175">
-          <caret line="217" column="44" lean-forward="true" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="44" />
+          <caret line="217" column="44" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -854,18 +804,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/nodeMailer/sendMail.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+        <state relative-caret-position="516">
+          <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
           <folding>
-            <element signature="e#2091#4665#0" />
+            <element signature="e#11893#14467#0" />
+            <element signature="e#14528#14611#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nodeMailer/sendMail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        <state relative-caret-position="513">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/istanbul-coveralls/cli.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="25" column="101" selection-start-line="25" selection-start-column="101" selection-end-line="25" selection-end-column="101" />
         </state>
       </provider>
     </entry>
