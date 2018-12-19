@@ -35,42 +35,7 @@ const loadTemplates = require('../../templates').loadTemplates
 const Mustache = require('mustache')
 const Email = require('../nodeMailer/sendMail')
 
-const createMessageProtocol = (payload, action, state = '', pp = '') => {
-  return {
-    id: Uuid(),
-    from: payload.from,
-    to: payload.to,
-    type: 'application/json',
-    content: {
-      header: {},
-      payload
-    },
-    metadata: {
-      event: {
-        id: Uuid(),
-        responseTo: '',
-        type: 'notification',
-        action,
-        createdAt: new Date(),
-        state
-      }
-    },
-    pp
-  }
-}
-
 const dictionary = {
-  produceToKafkaTopic: async ({ payload, action, eventType = TransferEventType.NOTIFICATION, eventAction = TransferEventAction.EVENT }) => {
-    try {
-      await Utility.produceGeneralMessage(eventType, eventAction, createMessageProtocol(payload, action), Utility.ENUMS.STATE.SUCCESS)
-    } catch (err) {
-      throw err
-    }
-  },
-
-  sendRequest: ({ method = 'GET', url, payload }) => {
-    return 'not implemented'
-  },
 
   sendEmail: async ({ payload }) => {
     const path = `${payload.messageDetails.language}/${payload.messageDetails.templateType}`
@@ -106,14 +71,18 @@ const dictionary = {
 }
 
 const actionBuilder = (action) => {
-  return dictionary[action]
+  if (action in dictionary) {
+    return dictionary[action]
+  } else {
+    throw new Error('Action are not supported')
+  }
 }
 
 const actionObservable = (message) => {
   return Rx.Observable.create(async observer => {
-    const result = await actionBuilder(message.value.content.payload.messageDetails.action)({ payload: message.value.content.payload })
-    observer.next(result)
     try {
+      const result = await actionBuilder(message.value.content.payload.messageDetails.action)({ payload: message.value.content.payload })
+      observer.next(result)
     } catch (err) {
       Logger.info(`action observer failed with error - ${err}`)
       observer.error(err)
@@ -121,12 +90,4 @@ const actionObservable = (message) => {
   })
 }
 
-const getActions = () => {
-  let actions = []
-  for (let action in dictionary) {
-    actions.push(action)
-  }
-  return actions
-}
-
-module.exports = { actionObservable, getActions }
+module.exports = { actionObservable }

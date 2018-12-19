@@ -17,45 +17,54 @@
  optionally within square brackets <email>.
  * Gates Foundation
  - Name Surname <name.surname@gatesfoundation.com>
- * Rajiv Mothilal <rajiv.mothilal@modusbox.com>
- * Miguel de Barros <miguel.debarros@modusbox.com>
+
+ - Shashikant Hirugade <shashikant.hirugade@modusbox.com>
  --------------
  ******/
 
 'use strict'
 
-/**
- * @module src/nodeMailer/sendMail
- */
+const rewire = require('rewire')
+const Rx = require('rxjs')
+const Sinon = require('sinon')
+const should = require('chai').should()
+const Expect = require('chai').expect
+const Templates = require('../../../templates/index')
 
-const Nodemailer = require('nodemailer')
-const Config = require('../lib/config')
-const MailOptions = Config.get('emailSettings').smtpConfig
+const TemplatesRewire = rewire('../../../templates/index')
+const hasLoadTemplates = TemplatesRewire.__get__('loadTemplates')
 
-const transporter = Nodemailer.createTransport(MailOptions)
+describe('Templates unit tests (Index.js) : ', () => {
 
-/*let verifyEmailTransport = () => {
-  return new Promise((resolve, reject) => {
-    transporter.verify(function (error, success) {
-      if (error) {
-        console.log(error)
-      } else {
-        console.log('Mail server ready to take messages')
-      }
-    })
+  var sandbox
+  beforeEach(function () {
+    // create a sandbox
+    sandbox = Sinon.sandbox.create();
+    // start stubbing stuff
+
   })
-}*/
 
-let sendMailMessage = async (message) => {
-  return new Promise((resolve, reject) => {
-    transporter.sendMail(message, (error, info) => {
-      if (error) {
-        reject(error)
-      } else {
-        resolve({emailSent: info.response})
-      }
-    })
+  afterEach(function () {
+    // restore the environment as it was before
+    sandbox.restore()
   })
-}
 
-module.exports = {sendMailMessage}
+  it(' getTemplateNamesByType should throw an error when incorrect path is given.', async () => {
+    try {
+      let result = await Templates.loadTemplates('/test', 'mustache')
+    } catch (e) {
+      Expect(e).to.be.an('error');
+      return Promise.resolve()
+    }
+  })
+
+  it(' loadTemplates should throw an error when incorrect path is given.', async () => {
+    try {
+      let result = await hasLoadTemplates('/test', 'mustache')
+    } catch (e) {
+      Expect(e).to.be.an('error');
+      return Promise.resolve()
+    }
+  })
+
+})
