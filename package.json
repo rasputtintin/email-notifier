@@ -1,11 +1,12 @@
 {
   "name": "central-notification",
-  "version": "0.0.1",
+  "version": "4.3.0",
   "description": "email notifier to monitor the notificaion kafka topic and send emails.",
   "main": "index.js",
   "dependencies": {
     "@mojaloop/central-services-error-handling": "0.5.1",
     "@mojaloop/central-services-shared": "^3.7.1-snapshot",
+    "@mojaloop/central-services-stream": "^3.9.0-snapshot",
     "camelcase": "^5.0.0",
     "check-types": "^7.4.0",
     "config": "^3.0.0",
