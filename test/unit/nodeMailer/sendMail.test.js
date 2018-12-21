@@ -24,22 +24,19 @@
 
 'use strict'
 
-const rewire = require('rewire')
-const Rx = require('rxjs')
 const Sinon = require('sinon')
-const should = require('chai').should()
 const Expect = require('chai').expect
+const Mailer = require('../../../src/nodeMailer/sendMail').Mailer
 
-const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer')
 
 describe('nodeMailer unit tests (sendMail.js) : ', () => {
-
   var sandbox
   beforeEach(function () {
     // create a sandbox
-    sandbox = Sinon.sandbox.create();
+    sandbox = Sinon.sandbox.create()
     // start stubbing stuff
-
+    sandbox.stub(nodemailer, 'createTransport')
   })
 
   afterEach(function () {
@@ -49,208 +46,191 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
 
   it(' sendMail should return success.', async () => {
     let mockMessage = {
-      "value": {
-        "from": "SYSTEM",
-        "to": "dfsp1",
-        "id": "694dd040-a315-4427-bcf0-e29229c4defe",
-        "content": {
-          "header": {},
-          "payload": {
-            "from": "SYSTEM",
-            "to": "dfsp1",
-            "recepientDetails": {
-              "_id": "5bf5480aa305f9801a6d59db",
-              "name": "dfsp1",
-              "type": "NET_DEBIT_CAP_ADJUSTMENT",
-              "value": "dean.bothma@modusbox.com",
-              "action": "sendEmail",
-              "createdAt": "2018-11-21T11:56:58.919Z",
-              "updatedAt": "2018-11-21T14:00:38.993Z",
-              "__v": 0
+      'value': {
+        'from': 'SYSTEM',
+        'to': 'dfsp1',
+        'id': '694dd040-a315-4427-bcf0-e29229c4defe',
+        'content': {
+          'header': {},
+          'payload': {
+            'from': 'SYSTEM',
+            'to': 'dfsp1',
+            'recepientDetails': {
+              '_id': '5bf5480aa305f9801a6d59db',
+              'name': 'dfsp1',
+              'type': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'value': 'dean.bothma@modusbox.com',
+              'action': 'sendEmail',
+              'createdAt': '2018-11-21T11:56:58.919Z',
+              'updatedAt': '2018-11-21T14:00:38.993Z',
+              '__v': 0
             },
-            "hubDetails": {
-              "_id": "5bf5480aa305f9801a6d59dd",
-              "name": "Hub",
-              "type": "NET_DEBIT_CAP_ADJUSTMENT",
-              "value": "dean.bothma@modusbox.com",
-              "action": "sendEmail",
-              "createdAt": "2018-11-21T11:56:58.950Z",
-              "updatedAt": "2018-11-21T14:00:39.077Z",
-              "__v": 0
+            'hubDetails': {
+              '_id': '5bf5480aa305f9801a6d59dd',
+              'name': 'Hub',
+              'type': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'value': 'dean.bothma@modusbox.com',
+              'action': 'sendEmail',
+              'createdAt': '2018-11-21T11:56:58.950Z',
+              'updatedAt': '2018-11-21T14:00:39.077Z',
+              '__v': 0
             },
-            "messageDetails": {
-              "dfsp": "dfsp1",
-              "limitType": "NET_DEBIT_CAP",
-              "value": 1000,
-              "currency": "USD",
-              "triggeredBy": "5bf5480ba305f9801a6d59e0",
-              "repetitionsAllowed": 3,
-              "fromEvent": "5bf5480ba305f9801a6d59e4",
-              "action": "sendEmail",
-              "notificationEndpointType": "NET_DEBIT_CAP_ADJUSTMENT",
-              "templateType": "adjustment",
-              "language": "en",
-              "messageSubject": "NET_DEBIT_CAP LIMIT ADJUSTMENT",
-              "notificationInterval": 3,
-              "resetPeriod": 60
+            'messageDetails': {
+              'dfsp': 'dfsp1',
+              'limitType': 'NET_DEBIT_CAP',
+              'value': 1000,
+              'currency': 'USD',
+              'triggeredBy': '5bf5480ba305f9801a6d59e0',
+              'repetitionsAllowed': 3,
+              'fromEvent': '5bf5480ba305f9801a6d59e4',
+              'action': 'sendEmail',
+              'notificationEndpointType': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'templateType': 'adjustment',
+              'language': 'en',
+              'messageSubject': 'NET_DEBIT_CAP LIMIT ADJUSTMENT',
+              'notificationInterval': 3,
+              'resetPeriod': 60
             }
           }
         },
-        "type": "application/json",
-        "metadata": {
-          "event": {
-            "id": "4276f87a-0a17-485f-acb8-f2d582a1f608",
-            "responseTo": "88d15b71-ae0d-4e31-a285-c3fdd5982180",
-            "type": "notification",
-            "action": "event",
-            "createdAt": "2018-12-11T13:36:58.225Z",
-            "state": {"status": "success", "code": 0, "description": "action successful"}
-          }, "protocol.createdAt": 1544535418447
+        'type': 'application/json',
+        'metadata': {
+          'event': {
+            'id': '4276f87a-0a17-485f-acb8-f2d582a1f608',
+            'responseTo': '88d15b71-ae0d-4e31-a285-c3fdd5982180',
+            'type': 'notification',
+            'action': 'event',
+            'createdAt': '2018-12-11T13:36:58.225Z',
+            'state': {'status': 'success', 'code': 0, 'description': 'action successful'}
+          },
+          'protocol.createdAt': 1544535418447
         },
-        "pp": ""
+        'pp': ''
       },
-      "size": 1363,
-      "key": {
-        "type": "Buffer",
-        "data": [51, 48, 55, 54, 50, 51, 49, 55, 45, 54, 48, 97, 48, 45, 52, 98, 102, 52, 45, 98, 98, 97, 97, 45, 100, 50, 49, 50, 53, 101, 49, 100, 54, 52, 50, 97]
+      'size': 1363,
+      'key': {
+        'type': 'Buffer',
+        'data': [51, 48, 55, 54, 50, 51, 49, 55, 45, 54, 48, 97, 48, 45, 52, 98, 102, 52, 45, 98, 98, 97, 97, 45, 100, 50, 49, 50, 53, 101, 49, 100, 54, 52, 50, 97]
       },
-      "topic": "topic-notification-event",
-      "offset": 4,
-      "partition": 0,
-      "timestamp": 1544535418448
+      'topic': 'topic-notification-event',
+      'offset': 4,
+      'partition': 0,
+      'timestamp': 1544535418448
     }
 
     const transport = {
       sendMail: (data, callback) => {
-        callback(null, {response: 'ok'});
+        callback(null, { response: 'ok' })
       }
     }
 
-    sandbox.stub(nodemailer, 'createTransport').returns(transport)
-    const Mailer = require('../../../src/nodeMailer/sendMail')
+    nodemailer.createTransport.returns(transport)
 
     try {
-      let result = await Mailer.sendMailMessage(mockMessage)
+      let mailer = new Mailer()
+      let result = await mailer.sendMailMessage(mockMessage)
 
       result.should.deep.equal({
         emailSent: 'ok'
-      });
-
+      })
+      sandbox.restore()
       return Promise.resolve()
     } catch (e) {
-      Expect(e).to.be.an('error');
+      Expect(e).to.be.an('error')
       return Promise.resolve()
     }
   })
 
-  describe('nodeMailer unit tests (sendMail.js Exception) : ', () => {
-
-    var sandbox
-    beforeEach(function () {
-      // create a sandbox
-      sandbox = Sinon.sandbox.create();
-      // start stubbing stuff
-
-    })
-
-    afterEach(function () {
-      // restore the environment as it was before
-      sandbox.restore()
-    })
-
-    it(' sendMail should throw an error.', async () => {
-      let mockMessage = {
-        "value": {
-          "from": "SYSTEM",
-          "to": "dfsp1",
-          "id": "694dd040-a315-4427-bcf0-e29229c4defe",
-          "content": {
-            "header": {},
-            "payload": {
-              "from": "SYSTEM",
-              "to": "dfsp1",
-              "recepientDetails": {
-                "_id": "5bf5480aa305f9801a6d59db",
-                "name": "dfsp1",
-                "type": "NET_DEBIT_CAP_ADJUSTMENT",
-                "value": "dean.bothma@modusbox.com",
-                "action": "sendEmail",
-                "createdAt": "2018-11-21T11:56:58.919Z",
-                "updatedAt": "2018-11-21T14:00:38.993Z",
-                "__v": 0
-              },
-              "hubDetails": {
-                "_id": "5bf5480aa305f9801a6d59dd",
-                "name": "Hub",
-                "type": "NET_DEBIT_CAP_ADJUSTMENT",
-                "value": "dean.bothma@modusbox.com",
-                "action": "sendEmail",
-                "createdAt": "2018-11-21T11:56:58.950Z",
-                "updatedAt": "2018-11-21T14:00:39.077Z",
-                "__v": 0
-              },
-              "messageDetails": {
-                "dfsp": "dfsp1",
-                "limitType": "NET_DEBIT_CAP",
-                "value": 1000,
-                "currency": "USD",
-                "triggeredBy": "5bf5480ba305f9801a6d59e0",
-                "repetitionsAllowed": 3,
-                "fromEvent": "5bf5480ba305f9801a6d59e4",
-                "action": "sendEmail",
-                "notificationEndpointType": "NET_DEBIT_CAP_ADJUSTMENT",
-                "templateType": "adjustment",
-                "language": "en",
-                "messageSubject": "NET_DEBIT_CAP LIMIT ADJUSTMENT",
-                "notificationInterval": 3,
-                "resetPeriod": 60
-              }
+  it (' sendMail should throw an error.', async () => {
+    let mockMessage = {
+      'value': {
+        'from': 'SYSTEM',
+        'to': 'dfsp1',
+        'id': '694dd040-a315-4427-bcf0-e29229c4defe',
+        'content': {
+          'header': {},
+          'payload': {
+            'from': 'SYSTEM',
+            'to': 'dfsp1',
+            'recepientDetails': {
+              '_id': '5bf5480aa305f9801a6d59db',
+              'name': 'dfsp1',
+              'type': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'value': 'dean.bothma@modusbox.com',
+              'action': 'sendEmail',
+              'createdAt': '2018-11-21T11:56:58.919Z',
+              'updatedAt': '2018-11-21T14:00:38.993Z',
+              '__v': 0
+            },
+            'hubDetails': {
+              '_id': '5bf5480aa305f9801a6d59dd',
+              'name': 'Hub',
+              'type': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'value': 'dean.bothma@modusbox.com',
+              'action': 'sendEmail',
+              'createdAt': '2018-11-21T11:56:58.950Z',
+              'updatedAt': '2018-11-21T14:00:39.077Z',
+              '__v': 0
+            },
+            'messageDetails': {
+              'dfsp': 'dfsp1',
+              'limitType': 'NET_DEBIT_CAP',
+              'value': 1000,
+              'currency': 'USD',
+              'triggeredBy': '5bf5480ba305f9801a6d59e0',
+              'repetitionsAllowed': 3,
+              'fromEvent': '5bf5480ba305f9801a6d59e4',
+              'action': 'sendEmail',
+              'notificationEndpointType': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'templateType': 'adjustment',
+              'language': 'en',
+              'messageSubject': 'NET_DEBIT_CAP LIMIT ADJUSTMENT',
+              'notificationInterval': 3,
+              'resetPeriod': 60
             }
-          },
-          "type": "application/json",
-          "metadata": {
-            "event": {
-              "id": "4276f87a-0a17-485f-acb8-f2d582a1f608",
-              "responseTo": "88d15b71-ae0d-4e31-a285-c3fdd5982180",
-              "type": "notification",
-              "action": "event",
-              "createdAt": "2018-12-11T13:36:58.225Z",
-              "state": {"status": "success", "code": 0, "description": "action successful"}
-            }, "protocol.createdAt": 1544535418447
-          },
-          "pp": ""
+          }
         },
-        "size": 1363,
-        "key": {
-          "type": "Buffer",
-          "data": [51, 48, 55, 54, 50, 51, 49, 55, 45, 54, 48, 97, 48, 45, 52, 98, 102, 52, 45, 98, 98, 97, 97, 45, 100, 50, 49, 50, 53, 101, 49, 100, 54, 52, 50, 97]
+        'type': 'application/json',
+        'metadata': {
+          'event': {
+            'id': '4276f87a-0a17-485f-acb8-f2d582a1f608',
+            'responseTo': '88d15b71-ae0d-4e31-a285-c3fdd5982180',
+            'type': 'notification',
+            'action': 'event',
+            'createdAt': '2018-12-11T13:36:58.225Z',
+            'state': {'status': 'success', 'code': 0, 'description': 'action successful'}
+          }, 'protocol.createdAt': 1544535418447
         },
-        "topic": "topic-notification-event",
-        "offset": 4,
-        "partition": 0,
-        "timestamp": 1544535418448
+        'pp': ''
+      },
+      'size': 1363,
+      'key': {
+        'type': 'Buffer',
+        'data': [51, 48, 55, 54, 50, 51, 49, 55, 45, 54, 48, 97, 48, 45, 52, 98, 102, 52, 45, 98, 98, 97, 97, 45, 100, 50, 49, 50, 53, 101, 49, 100, 54, 52, 50, 97]
+      },
+      'topic': 'topic-notification-event',
+      'offset': 4,
+      'partition': 0,
+      'timestamp': 1544535418448
+    }
+
+    const transportFail = {
+      sendMail: (data, callback) => {
+        const err = new Error('some error')
+        callback(err, null)
       }
+    }
 
-      const transport = {
-        sendMail: (data, callback) => {
-          const err = new Error('some error');
-          callback(err, null);
-        }
-      }
+    nodemailer.createTransport.returns(transportFail)
 
-      sandbox.stub(nodemailer, 'createTransport').returns(transport)
-      const Mailer = require('../../../src/nodeMailer/sendMail')
+    try {
+      let mailer = new Mailer()
+      let result = await mailer.sendMailMessage(mockMessage)
 
-      try {
-
-        let result = await Mailer.sendMailMessage(mockMessage)
-
-
-        return Promise.resolve()
-      } catch (e) {
-        Expect(e).to.be.an('error');
-        return Promise.resolve()
-      }
-    })
+    } catch (e) {
+      Expect(e).to.be.an('error')
+      return Promise.resolve()
+    }
   })
 })
+
