@@ -25,16 +25,18 @@
 'use strict'
 
 const Sinon = require('sinon')
-const Test = require('tapes')(require('tape'))
+const Expect = require('chai').expect
+const Mailer = require('../../../src/nodeMailer/sendMail').Mailer
+
 const nodemailer = require('nodemailer')
 
-Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
-  let sandbox
-  sendMailTest.beforeEach(t => {
+describe('nodeMailer unit tests (sendMail.js) : ', () => {
+  var sandbox
+  beforeEach(function () {
     // create a sandbox
     sandbox = Sinon.sandbox.create()
     // start stubbing stuff
-    t.end()
+    sandbox.stub(nodemailer, 'createTransport')
   })
 
   sendMailTest.afterEach(t => {
@@ -100,7 +102,7 @@ Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
             'type': 'notification',
             'action': 'event',
             'createdAt': '2018-12-11T13:36:58.225Z',
-            'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
+            'state': {'status': 'success', 'code': 0, 'description': 'action successful'}
           },
           'protocol.createdAt': 1544535418447
         },
@@ -123,39 +125,24 @@ Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
       }
     }
 
-    sandbox.stub(nodemailer, 'createTransport').returns(transport)
-    const Mailer = require('../../../src/nodeMailer/sendMail')
+    nodemailer.createTransport.returns(transport)
+
     try {
-      let result = await Mailer.sendMailMessage(mockMessage)
-      assert.deepEqual(result, {
+      let mailer = new Mailer()
+      let result = await mailer.sendMailMessage(mockMessage)
+
+      result.should.deep.equal({
         emailSent: 'ok'
       })
-      assert.end()
+      sandbox.restore()
+      return Promise.resolve()
     } catch (e) {
-      assert.fail('should have thrown')
-      assert.end()
+      Expect(e).to.be.an('error')
+      return Promise.resolve()
     }
   })
 
-  await sendMailTest.end()
-})
-
-Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
-  let sandbox
-  sendMailTest.beforeEach(t => {
-    // create a sandbox
-    sandbox = Sinon.sandbox.create()
-    // start stubbing stuff
-    t.end()
-  })
-
-  sendMailTest.afterEach(t => {
-    // restore the environment as it was before
-    sandbox.restore()
-    t.end()
-  })
-
-  await sendMailTest.test(' sendMail should return success.', async assert => {
+  it (' sendMail should throw an error.', async () => {
     let mockMessage = {
       'value': {
         'from': 'SYSTEM',
@@ -212,9 +199,8 @@ Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
             'type': 'notification',
             'action': 'event',
             'createdAt': '2018-12-11T13:36:58.225Z',
-            'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
-          },
-          'protocol.createdAt': 1544535418447
+            'state': {'status': 'success', 'code': 0, 'description': 'action successful'}
+          }, 'protocol.createdAt': 1544535418447
         },
         'pp': ''
       },
@@ -229,24 +215,24 @@ Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
       'timestamp': 1544535418448
     }
 
-    const transport = {
+    const transportFail = {
       sendMail: (data, callback) => {
         const err = new Error('some error')
         callback(err, null)
       }
     }
 
-    sandbox.stub(nodemailer, 'createTransport').returns(transport)
-    const Mailer = require('../../../src/nodeMailer/sendMail')
+    nodemailer.createTransport.returns(transportFail)
 
     try {
-      await Mailer.sendMailMessage(mockMessage)
-      assert.fail(`should throw`)
-      assert.end()
+      let mailer = new Mailer()
+      let result = await mailer.sendMailMessage(mockMessage)
+
     } catch (e) {
-      assert.ok('error is thrown')
-      assert.end()
+      Expect(e).to.be.an('error')
+      return Promise.resolve()
     }
   })
   await sendMailTest.end()
 })
+

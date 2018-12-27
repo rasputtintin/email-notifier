@@ -25,15 +25,11 @@
 'use strict'
 
 const Rx = require('rxjs')
-const Utility = require('../lib/utility')
-const Uuid = require('uuid4')
-const Enum = require('../lib/enum')
-const TransferEventType = Enum.transferEventType
-const TransferEventAction = Enum.transferEventAction
 const Logger = require('@mojaloop/central-services-shared').Logger
 const loadTemplates = require('../../templates').loadTemplates
 const Mustache = require('mustache')
-const Email = require('../nodeMailer/sendMail')
+const Email = require('../nodeMailer/sendMail').Mailer
+const mailer = new Email()
 
 const dictionary = {
 
@@ -61,8 +57,8 @@ const dictionary = {
       text: hubEmailBody
     }
 
-    const hubMailResult = await Email.sendMailMessage(hubMessage)
-    const dfspMailResult = await Email.sendMailMessage(dfspMessage)
+    const hubMailResult = await mailer.sendMailMessage(hubMessage)
+    const dfspMailResult = await mailer.sendMailMessage(dfspMessage)
     return {
       dfspMailResult,
       hubMailResult
