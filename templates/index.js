@@ -33,7 +33,7 @@ const loadTemplates = async ({ path, names }) => {
 }
 
 module.exports.loadTemplates = async (path, type) => {
-  try{
+  try {
     let result = await loadTemplates(await getTemplateNamesByType(path, type))
     return result
   } catch (e) {
