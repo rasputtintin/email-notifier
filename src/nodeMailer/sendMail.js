@@ -52,7 +52,7 @@ let sendMailMessage = async (message) => {
       if (error) {
         reject(error)
       } else {
-        resolve({ emailSent: info.response })
+        resolve({emailSent: info.response})
       }
     })
   })

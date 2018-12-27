@@ -196,7 +196,7 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
             'createdAt': '2018-12-11T13:36:58.225Z',
             'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
           },
-'protocol.createdAt': 1544535418447
+          'protocol.createdAt': 1544535418447
         },
         'pp': ''
       },
