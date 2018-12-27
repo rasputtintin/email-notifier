@@ -24,29 +24,26 @@
 
 'use strict'
 
-const rewire = require('rewire')
-const Rx = require('rxjs')
 const Sinon = require('sinon')
-const should = require('chai').should()
-const Expect = require('chai').expect
-
+const Test = require('tapes')(require('tape'))
 const nodemailer = require('nodemailer')
 
-describe('nodeMailer unit tests (sendMail.js) : ', () => {
-  var sandbox
-  beforeEach(function () {
+Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
+  let sandbox
+  sendMailTest.beforeEach(t => {
     // create a sandbox
     sandbox = Sinon.sandbox.create()
     // start stubbing stuff
-
+    t.end()
   })
 
-  afterEach(function () {
+  sendMailTest.afterEach(t => {
     // restore the environment as it was before
     sandbox.restore()
+    t.end()
   })
 
-  it(' sendMail should return success.', async () => {
+  await sendMailTest.test(' sendMail should return success.', async assert => {
     let mockMessage = {
       'value': {
         'from': 'SYSTEM',
@@ -105,7 +102,7 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
             'createdAt': '2018-12-11T13:36:58.225Z',
             'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
           },
-'protocol.createdAt': 1544535418447
+          'protocol.createdAt': 1544535418447
         },
         'pp': ''
       },
@@ -128,125 +125,128 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
 
     sandbox.stub(nodemailer, 'createTransport').returns(transport)
     const Mailer = require('../../../src/nodeMailer/sendMail')
-
     try {
       let result = await Mailer.sendMailMessage(mockMessage)
-
-      result.should.deep.equal({
+      assert.deepEqual(result, {
         emailSent: 'ok'
       })
-
-      return Promise.resolve()
+      assert.end()
     } catch (e) {
-      Expect(e).to.be.an('error')
-      return Promise.resolve()
+      assert.fail('should have thrown')
+      assert.end()
     }
   })
 
-  describe('nodeMailer unit tests (sendMail.js Exception) : ', () => {
-    var sandbox
-    beforeEach(function () {
-      // create a sandbox
-      sandbox = Sinon.sandbox.create()
-      // start stubbing stuff
-    })
+  await sendMailTest.end()
+})
 
-    afterEach(function () {
-      // restore the environment as it was before
-      sandbox.restore()
-    })
-
-    it(' sendMail should throw an error.', async () => {
-      let mockMessage = {
-        'value': {
-          'from': 'SYSTEM',
-          'to': 'dfsp1',
-          'id': '694dd040-a315-4427-bcf0-e29229c4defe',
-          'content': {
-            'header': {},
-            'payload': {
-              'from': 'SYSTEM',
-              'to': 'dfsp1',
-              'recepientDetails': {
-                '_id': '5bf5480aa305f9801a6d59db',
-                'name': 'dfsp1',
-                'type': 'NET_DEBIT_CAP_ADJUSTMENT',
-                'value': 'dean.bothma@modusbox.com',
-                'action': 'sendEmail',
-                'createdAt': '2018-11-21T11:56:58.919Z',
-                'updatedAt': '2018-11-21T14:00:38.993Z',
-                '__v': 0
-              },
-              'hubDetails': {
-                '_id': '5bf5480aa305f9801a6d59dd',
-                'name': 'Hub',
-                'type': 'NET_DEBIT_CAP_ADJUSTMENT',
-                'value': 'dean.bothma@modusbox.com',
-                'action': 'sendEmail',
-                'createdAt': '2018-11-21T11:56:58.950Z',
-                'updatedAt': '2018-11-21T14:00:39.077Z',
-                '__v': 0
-              },
-              'messageDetails': {
-                'dfsp': 'dfsp1',
-                'limitType': 'NET_DEBIT_CAP',
-                'value': 1000,
-                'currency': 'USD',
-                'triggeredBy': '5bf5480ba305f9801a6d59e0',
-                'repetitionsAllowed': 3,
-                'fromEvent': '5bf5480ba305f9801a6d59e4',
-                'action': 'sendEmail',
-                'notificationEndpointType': 'NET_DEBIT_CAP_ADJUSTMENT',
-                'templateType': 'adjustment',
-                'language': 'en',
-                'messageSubject': 'NET_DEBIT_CAP LIMIT ADJUSTMENT',
-                'notificationInterval': 3,
-                'resetPeriod': 60
-              }
-            }
-          },
-          'type': 'application/json',
-          'metadata': {
-            'event': {
-              'id': '4276f87a-0a17-485f-acb8-f2d582a1f608',
-              'responseTo': '88d15b71-ae0d-4e31-a285-c3fdd5982180',
-              'type': 'notification',
-              'action': 'event',
-              'createdAt': '2018-12-11T13:36:58.225Z',
-              'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
-            },
-            'protocol.createdAt': 1544535418447
-          },
-          'pp': ''
-        },
-        'size': 1363,
-        'key': {
-          'type': 'Buffer',
-          'data': [51, 48, 55, 54, 50, 51, 49, 55, 45, 54, 48, 97, 48, 45, 52, 98, 102, 52, 45, 98, 98, 97, 97, 45, 100, 50, 49, 50, 53, 101, 49, 100, 54, 52, 50, 97]
-        },
-        'topic': 'topic-notification-event',
-        'offset': 4,
-        'partition': 0,
-        'timestamp': 1544535418448
-      }
-
-      const transport = {
-        sendMail: (data, callback) => {
-          const err = new Error('some error')
-          callback(err, null)
-        }
-      }
-
-      sandbox.stub(nodemailer, 'createTransport').returns(transport)
-      const Mailer = require('../../../src/nodeMailer/sendMail')
-
-      try {
-        await Mailer.sendMailMessage(mockMessage)
-        return Promise.resolve()
-      } catch (e) {
-        Expect(e).to.be.an('error')
-        return Promise.resolve()
-      }
-    })
+Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
+  let sandbox
+  sendMailTest.beforeEach(t => {
+    // create a sandbox
+    sandbox = Sinon.sandbox.create()
+    // start stubbing stuff
+    t.end()
   })
+
+  sendMailTest.afterEach(t => {
+    // restore the environment as it was before
+    sandbox.restore()
+    t.end()
+  })
+
+  await sendMailTest.test(' sendMail should return success.', async assert => {
+    let mockMessage = {
+      'value': {
+        'from': 'SYSTEM',
+        'to': 'dfsp1',
+        'id': '694dd040-a315-4427-bcf0-e29229c4defe',
+        'content': {
+          'header': {},
+          'payload': {
+            'from': 'SYSTEM',
+            'to': 'dfsp1',
+            'recepientDetails': {
+              '_id': '5bf5480aa305f9801a6d59db',
+              'name': 'dfsp1',
+              'type': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'value': 'dean.bothma@modusbox.com',
+              'action': 'sendEmail',
+              'createdAt': '2018-11-21T11:56:58.919Z',
+              'updatedAt': '2018-11-21T14:00:38.993Z',
+              '__v': 0
+            },
+            'hubDetails': {
+              '_id': '5bf5480aa305f9801a6d59dd',
+              'name': 'Hub',
+              'type': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'value': 'dean.bothma@modusbox.com',
+              'action': 'sendEmail',
+              'createdAt': '2018-11-21T11:56:58.950Z',
+              'updatedAt': '2018-11-21T14:00:39.077Z',
+              '__v': 0
+            },
+            'messageDetails': {
+              'dfsp': 'dfsp1',
+              'limitType': 'NET_DEBIT_CAP',
+              'value': 1000,
+              'currency': 'USD',
+              'triggeredBy': '5bf5480ba305f9801a6d59e0',
+              'repetitionsAllowed': 3,
+              'fromEvent': '5bf5480ba305f9801a6d59e4',
+              'action': 'sendEmail',
+              'notificationEndpointType': 'NET_DEBIT_CAP_ADJUSTMENT',
+              'templateType': 'adjustment',
+              'language': 'en',
+              'messageSubject': 'NET_DEBIT_CAP LIMIT ADJUSTMENT',
+              'notificationInterval': 3,
+              'resetPeriod': 60
+            }
+          }
+        },
+        'type': 'application/json',
+        'metadata': {
+          'event': {
+            'id': '4276f87a-0a17-485f-acb8-f2d582a1f608',
+            'responseTo': '88d15b71-ae0d-4e31-a285-c3fdd5982180',
+            'type': 'notification',
+            'action': 'event',
+            'createdAt': '2018-12-11T13:36:58.225Z',
+            'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
+          },
+          'protocol.createdAt': 1544535418447
+        },
+        'pp': ''
+      },
+      'size': 1363,
+      'key': {
+        'type': 'Buffer',
+        'data': [51, 48, 55, 54, 50, 51, 49, 55, 45, 54, 48, 97, 48, 45, 52, 98, 102, 52, 45, 98, 98, 97, 97, 45, 100, 50, 49, 50, 53, 101, 49, 100, 54, 52, 50, 97]
+      },
+      'topic': 'topic-notification-event',
+      'offset': 4,
+      'partition': 0,
+      'timestamp': 1544535418448
+    }
+
+    const transport = {
+      sendMail: (data, callback) => {
+        const err = new Error('some error')
+        callback(err, null)
+      }
+    }
+
+    sandbox.stub(nodemailer, 'createTransport').returns(transport)
+    const Mailer = require('../../../src/nodeMailer/sendMail')
+
+    try {
+      await Mailer.sendMailMessage(mockMessage)
+      assert.fail(`should throw`)
+      assert.end()
+    } catch (e) {
+      assert.ok('error is thrown')
+      assert.end()
+    }
+  })
+  await sendMailTest.end()
 })
