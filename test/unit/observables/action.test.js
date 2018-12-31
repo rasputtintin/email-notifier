@@ -39,16 +39,16 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
   let sandbox
   actionTest.beforeEach(t => {
     // create a sandbox
-    sandbox = Sinon.sandbox.create()
+    sandbox = Sinon.sandbox
       // start stubbing stuff
-    const transporterStub = sandbox.stub()
-    const stub = {
-      'nodemailer': {
-        createTransport: transporterStub
-      }
-    }
-    proxyqiure(`../../../src/nodeMailer/sendMail.js`, stub)
-    Email.sendMailMessage = sandbox.stub()
+    // const transporterStub = sandbox.stub()
+    // const stub = {
+    //   'nodemailer': {
+    //     createTransport: transporterStub
+    //   }
+    // }
+    // proxyqiure(`../../../src/nodeMailer/sendMail.js`, stub)
+    // Email.sendMailMessage = sandbox.stub()
     // nodemailer.createTransport = sandbox.stub()
     // const transport = {
     //   sendMail: (data, callback) => {
@@ -56,6 +56,7 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
     //   }
     // }
     // nodemailer.createTransport.returns(transport)
+    sandbox.stub(Email.prototype, 'sendMailMessage')
     t.end()
   })
 
