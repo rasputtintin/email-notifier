@@ -25,11 +25,9 @@
 'use strict'
 
 const Test = require('tapes')(require('tape'))
-const Email = require('../../../src/nodeMailer/sendMail')
+const Email = require('../../../src/nodeMailer/sendMail').Mailer
 const Sinon = require('sinon')
 const ActionObservable = require('../../../src/observables/actions').actionObservable
-// const proxyqiure = require('proxyquire')
-// const nodemailer = require('nodemailer')
 
 Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
   Sinon.config = {
@@ -41,21 +39,6 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
     // create a sandbox
     sandbox = Sinon.createSandbox()
     // start stubbing stuff
-    // const transporterStub = sandbox.stub()
-    // const stub = {
-    //   'nodemailer': {
-    //     createTransport: transporterStub
-    //   }
-    // }
-    // proxyqiure(`../../../src/nodeMailer/sendMail.js`, stub)
-    // Email.sendMailMessage = sandbox.stub()
-    // nodemailer.createTransport = sandbox.stub()
-    // const transport = {
-    //   sendMail: (data, callback) => {
-    //     callback(null, { response: 'ok' })
-    //   }
-    // }
-    // nodemailer.createTransport.returns(transport)
     sandbox.stub(Email.prototype, 'sendMailMessage')
     t.end()
   })
