@@ -24,43 +24,72 @@
 
 'use strict'
 
-const rewire = require('rewire')
 const Sinon = require('sinon')
-const Expect = require('chai').expect
 const Templates = require('../../../templates/index')
+const Test = require('tapes')(require('tape'))
+const fs = require('fs')
+const { promisify } = require('util')
+const readFilePromise = promisify(fs.readFile)
 
-const TemplatesRewire = rewire('../../../templates/index')
-const hasLoadTemplates = TemplatesRewire.__get__('loadTemplates')
-
-describe('Templates unit tests (Index.js) : ', () => {
-  var sandbox
-  beforeEach(function () {
+Test('Templates unit tests (Index.js) : ', async templateTest => {
+  let sandbox
+  templateTest.beforeEach(t => {
     // create a sandbox
     sandbox = Sinon.sandbox.create()
     // start stubbing stuff
+    t.end()
   })
 
-  afterEach(function () {
+  templateTest.afterEach(t => {
     // restore the environment as it was before
     sandbox.restore()
+    t.end()
   })
 
-  it(' getTemplateNamesByType should throw an error when incorrect path is given.', async () => {
+  await templateTest.test(' getTemplateNamesByType should throw an error when incorrect path is given.', async assert => {
     try {
       await Templates.loadTemplates('/test', 'mustache')
+      assert.fail('should throw')
+      assert.end()
     } catch (e) {
-      Expect(e).to.be.an('error')
-      return Promise.resolve()
+      assert.ok(e instanceof Error)
+      assert.end()
     }
   })
 
-  it(' loadTemplates should throw an error when incorrect path is given.', async () => {
+  await templateTest.test('Load templates should throw an error if template is empty or cannot be loaded.', async assert => {
     try {
-      await hasLoadTemplates('/test', 'mustache')
+      await Templates.loadTemplates('../test/unit/templates', 'mustache')
+      assert.fail('should throw')
+      assert.end()
     } catch (e) {
-      Expect(e).to.be.an('error')
-      return Promise.resolve()
+      assert.equal(e.message, 'Templates cannot be loaded')
+      assert.end()
     }
   })
 
+  await templateTest.test('Load templates should throw an error if template is incorrect or missing type is given.', async assert => {
+    try {
+      await Templates.loadTemplates('../test/unit/templates', 'wrong')
+      assert.fail('should throw')
+      assert.end()
+    } catch (e) {
+      assert.equal(e.message, 'No such template type')
+      assert.end()
+    }
+  })
+
+  await templateTest.test('Load templates should load test template.', async assert => {
+    try {
+      const okTemplate = await readFilePromise(`${__dirname}/ok.template`, { encoding: 'utf8' })
+      const result = await Templates.loadTemplates('../test/unit/templates', 'template')
+      assert.equal(result.ok, okTemplate)
+      assert.end()
+    } catch (e) {
+      assert.fail('error was thrown')
+      assert.end()
+    }
+  })
+
+  await templateTest.end()
 })

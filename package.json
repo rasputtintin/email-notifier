@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "nyc mocha test/unit/**/*.test.js --timeout=4000",
-    "test:coverage": "istanbul cover ./node_modules/.bin/_mocha test/unit/**/*.test.js --timeout=4000"
+    "test:coverage": "istanbul cover tape -- 'test/unit/**/*.test.js'"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "mocha": "^5.2.0",
     "npm-run-all": "4.0.1",
     "nyc": "^13.1.0",
+    "proxyquire": "^2.1.0",
     "rewire": "^4.0.1",
     "sinon": "^5.0.10",
     "standard": "8.5.0",

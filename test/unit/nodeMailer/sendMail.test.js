@@ -24,19 +24,20 @@
 
 'use strict'
 
+const Test = require('tapes')(require('tape'))
 const Sinon = require('sinon')
-const Expect = require('chai').expect
 const Mailer = require('../../../src/nodeMailer/sendMail').Mailer
-
 const nodemailer = require('nodemailer')
 
-describe('nodeMailer unit tests (sendMail.js) : ', () => {
-  var sandbox
-  beforeEach(function () {
+Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
+  let sandbox
+
+  sendMailTest.beforeEach(t => {
     // create a sandbox
     sandbox = Sinon.sandbox.create()
     // start stubbing stuff
-    sandbox.stub(nodemailer, 'createTransport')
+    nodemailer.createTransport = sandbox.stub()
+    t.end()
   })
 
   sendMailTest.afterEach(t => {
@@ -131,18 +132,18 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
       let mailer = new Mailer()
       let result = await mailer.sendMailMessage(mockMessage)
 
-      result.should.deep.equal({
+      assert.deepEqual(result, {
         emailSent: 'ok'
       })
       sandbox.restore()
-      return Promise.resolve()
+      assert.end()
     } catch (e) {
-      Expect(e).to.be.an('error')
-      return Promise.resolve()
+      assert.fail(`test failed with error ${e}`)
+      assert.end()
     }
   })
 
-  it (' sendMail should throw an error.', async () => {
+  await sendMailTest.test(' sendMail should throw an error.', async assert => {
     let mockMessage = {
       'value': {
         'from': 'SYSTEM',
@@ -226,13 +227,13 @@ describe('nodeMailer unit tests (sendMail.js) : ', () => {
 
     try {
       let mailer = new Mailer()
-      let result = await mailer.sendMailMessage(mockMessage)
-
+      await mailer.sendMailMessage(mockMessage)
+      assert.fail('should throw')
+      assert.end()
     } catch (e) {
-      Expect(e).to.be.an('error')
-      return Promise.resolve()
+      assert.ok(e.message, 'some error')
+      assert.end()
     }
   })
   await sendMailTest.end()
 })
-

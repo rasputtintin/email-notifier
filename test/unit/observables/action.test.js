@@ -28,6 +28,8 @@ const Test = require('tapes')(require('tape'))
 const Email = require('../../../src/nodeMailer/sendMail')
 const Sinon = require('sinon')
 const ActionObservable = require('../../../src/observables/actions').actionObservable
+const proxyqiure = require('proxyquire')
+const nodemailer = require('nodemailer')
 
 Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
   Sinon.config = {
@@ -39,7 +41,21 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
     // create a sandbox
     sandbox = Sinon.sandbox.create()
       // start stubbing stuff
+    const transporterStub = sandbox.stub()
+    const stub = {
+      'nodemailer': {
+        createTransport: transporterStub
+      }
+    }
+    proxyqiure(`../../../src/nodeMailer/sendMail.js`, stub)
     Email.sendMailMessage = sandbox.stub()
+    // nodemailer.createTransport = sandbox.stub()
+    // const transport = {
+    //   sendMail: (data, callback) => {
+    //     callback(null, { response: 'ok' })
+    //   }
+    // }
+    // nodemailer.createTransport.returns(transport)
     t.end()
   })
 
@@ -108,7 +124,7 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
             'createdAt': '2018-12-11T13:36:58.225Z',
             'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
           },
-'protocol.createdAt': 1544535418447
+          'protocol.createdAt': 1544535418447
         },
         'pp': ''
       },
