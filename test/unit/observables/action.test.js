@@ -28,8 +28,8 @@ const Test = require('tapes')(require('tape'))
 const Email = require('../../../src/nodeMailer/sendMail')
 const Sinon = require('sinon')
 const ActionObservable = require('../../../src/observables/actions').actionObservable
-const proxyqiure = require('proxyquire')
-const nodemailer = require('nodemailer')
+// const proxyqiure = require('proxyquire')
+// const nodemailer = require('nodemailer')
 
 Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
   Sinon.config = {
@@ -39,8 +39,8 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
   let sandbox
   actionTest.beforeEach(t => {
     // create a sandbox
-    sandbox = Sinon.sandbox
-      // start stubbing stuff
+    sandbox = Sinon.createSandbox()
+    // start stubbing stuff
     // const transporterStub = sandbox.stub()
     // const stub = {
     //   'nodemailer': {
@@ -139,7 +139,8 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
       'partition': 0,
       'timestamp': 1544535418448
     }
-    Email.sendMailMessage.resolves(true)
+    let emailer = new Email()
+    emailer.sendMailMessage.resolves(true)
     ActionObservable(mockMessage).subscribe(
       result => {
         assert.deepEqual(result, {
@@ -227,7 +228,8 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
       'partition': 0,
       'timestamp': 1544535418448
     }
-    Email.sendMailMessage.rejects(new Error('Failure'))
+    let emailer = new Email()
+    emailer.sendMailMessage.rejects(new Error('Failure'))
     ActionObservable(mockMessage).subscribe(
       () => {
         assert.fail('should have thrown')
@@ -298,7 +300,7 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
             'createdAt': '2018-12-11T13:36:58.225Z',
             'state': { 'status': 'success', 'code': 0, 'description': 'action successful' }
           },
-'protocol.createdAt': 1544535418447
+          'protocol.createdAt': 1544535418447
         },
         'pp': ''
       },
@@ -312,8 +314,8 @@ Test('RxJs Observable Tests (Action Observable) : ', async actionTest => {
       'partition': 0,
       'timestamp': 1544535418448
     }
-
-    Email.sendMailMessage.resolves(true)
+    let emailer = new Email()
+    emailer.sendMailMessage.resolves(true)
 
     ActionObservable(mockMessage).subscribe(
       () => {
