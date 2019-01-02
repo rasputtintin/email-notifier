@@ -34,7 +34,7 @@ Test('nodeMailer unit tests (sendMail.js) : ', async sendMailTest => {
 
   sendMailTest.beforeEach(t => {
     // create a sandbox
-    sandbox = Sinon.sandbox.create()
+    sandbox = Sinon.createSandbox()
     // start stubbing stuff
     nodemailer.createTransport = sandbox.stub()
     t.end()

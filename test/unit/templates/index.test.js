@@ -35,7 +35,7 @@ Test('Templates unit tests (Index.js) : ', async templateTest => {
   let sandbox
   templateTest.beforeEach(t => {
     // create a sandbox
-    sandbox = Sinon.sandbox.create()
+    sandbox = Sinon.createSandbox()
     // start stubbing stuff
     t.end()
   })
