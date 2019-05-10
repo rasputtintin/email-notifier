@@ -21,7 +21,7 @@ export LDFLAGS=-L/usr/local/opt/openssl/lib
 
 ## Config
 
-Whole config is located [here](config/default.json)
+Entire config is located [here](config/default.json)
 
 The email settings are: 
 
