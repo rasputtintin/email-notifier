@@ -62,12 +62,15 @@ const setup = async () => {
     })
   })
 
-  const emailNotification = topicObservable
-    .pipe(filter(data => data.value.from === hubName),
-      flatMap(Observables.actionObservable))
+  const fltr = filter(data => data.value.from === hubName)
+  const flatM = flatMap(Observables.actionObservable)
+
+  const emailNotification = topicObservable.pipe(fltr, flatM)
+
   emailNotification.subscribe(result => {
     Logger.info(result)
   })
+  return true
 }
 
 module.exports = {
