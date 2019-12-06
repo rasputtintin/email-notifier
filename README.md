@@ -1,29 +1,19 @@
 # email-notifier
-Stand-alone email service that consumes messages from kafka topic, produced by the central-notifications service.
-The central-notificattions repo is available [here](https://github.com/mojaloop/central-notifications/tree/master)
-The email-notifier flow is available [here](https://github.com/mojaloop/central-notifications/tree/master#Notifierflowseparateservice)
+[![Git Commit](https://img.shields.io/github/last-commit/mojaloop/email-notifier.svg?style=flat)](https://github.com/mojaloop/email-notifier/commits/master)
+[![Git Releases](https://img.shields.io/github/release/mojaloop/email-notifier.svg?style=flat)](https://github.com/mojaloop/email-notifier/releases)
+[![Docker pulls](https://img.shields.io/docker/pulls/mojaloop/email-notifier.svg?style=flat)](https://hub.docker.com/r/mojaloop/email-notifier)
+[![CircleCI](https://circleci.com/gh/mojaloop/email-notifier.svg?style=svg)](https://circleci.com/gh/mojaloop/email-notifier)
 
-## Mac OS installation problems
+Email Notifier is a stand-alone email service that consumes messages from kafka topic, produced by the central-event-processor service.  
+The central-event-processor repo is available [here](https://github.com/mojaloop/central-event-processor/tree/master)  
+The email-notifier flow is available [here](https://github.com/mojaloop/central-event-processor/tree/master#Notifierflowseparateservice)  
 
-If you have this or similar error during installation:
-
-```
-npm install
-> node-gyp rebuild
-clang: error: linker command failed with exit code 1
-```
-
-add the following environmental variables: 
-```
-export CPPFLAGS=-I/usr/local/opt/openssl/include
-export LDFLAGS=-L/usr/local/opt/openssl/lib
-```
 
 ## Config
 
-Whole config is located [here](config/default.json)
+Refer to [`./config/default.json`](config/default.json) for a detailed look at the configuration options.
 
-The email settings are: 
+For configuring email:
 
 ```json
   "emailSettings": {
@@ -60,8 +50,23 @@ Those can be passed as the following environment variables:
       }
     }
   }
-
 }  
+```
+
+## Troubleshooting `npm install` on MacOS
+
+If you have this or similar error during installation:
+
+```bash
+npm install
+> node-gyp rebuild
+clang: error: linker command failed with exit code 1
+```
+
+add the following environment variables: 
+```bash
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export LDFLAGS=-L/usr/local/opt/openssl/lib
 ```
 
 
