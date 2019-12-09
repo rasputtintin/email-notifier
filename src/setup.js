@@ -30,7 +30,7 @@
 
 const Rx = require('rxjs')
 const { filter, flatMap } = require('rxjs/operators')
-const Logger = require('@mojaloop/central-services-shared').Logger
+const Logger = require('@mojaloop/central-services-logger')
 const HealthCheck = require('@mojaloop/central-services-shared').HealthCheck.HealthCheck
 const { createHealthCheckServer, defaultHealthHandler } = require('@mojaloop/central-services-health')
 

@@ -25,7 +25,7 @@
 'use strict'
 
 const setup = require('./src/setup').setup
-const Logger = require('@mojaloop/central-services-shared').Logger
+const Logger = require('@mojaloop/central-services-logger')
 
 try {
   setup()

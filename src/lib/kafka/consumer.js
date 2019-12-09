@@ -29,7 +29,7 @@
  */
 
 const Consumer = require('@mojaloop/central-services-stream').Kafka.Consumer
-const Logger = require('@mojaloop/central-services-shared').Logger
+const Logger = require('@mojaloop/central-services-logger')
 const Utility = require('../utility')
 const ErrorHandler = require('@mojaloop/central-services-error-handling')
 const listOfConsumers = {}
