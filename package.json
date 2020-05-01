@@ -15,7 +15,8 @@
     "nodemailer": "6.4.2",
     "rxjs": "6.5.3",
     "rxjs-compat": "6.5.3",
-    "uuid4": "1.1.4"
+    "uuid4": "1.1.4",
+    "snyk": "^1.316.1"
   },
   "scripts": {
     "start": "node app.js",
@@ -29,7 +30,9 @@
     "audit:resolve": "SHELL=sh resolve-audit && sed -i 's/: \"^/: \"/' package.json",
     "audit:check": "SHELL=sh check-audit",
     "dep:check": "npx ncu -e 2",
-    "dep:update": "npx ncu -u"
+    "dep:update": "npx ncu -u",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -54,5 +57,6 @@
     "standard": "14.3.1",
     "tape": "4.11.0",
     "tapes": "4.1.0"
-  }
+  },
+  "snyk": true
 }
